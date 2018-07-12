@@ -20,3 +20,5 @@ This app has a toolbar (kind of) at the bottom that is scrollable.
  - Eighth let's you load just the translated text. It also displays any exception.
      (If you don't get translated result, switch to this view.)
 
+App is available for download at
+https://play.google.com/store/apps/details?id=com.Gigabits.Anuvadak
