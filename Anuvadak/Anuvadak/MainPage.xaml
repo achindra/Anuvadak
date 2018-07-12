@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Anuvadak.MainPage"
+             Title="Anuvadak App">
+    <ContentPage.Content>
+        <!-- Title -->
+        <StackLayout Spacing="10" x:Name="layout">
+            <Label x:Name="lblTitle" 
+               Text="Anuvadak!" FontSize="Large"
+               HorizontalOptions="Center"
+               VerticalOptions="StartAndExpand" />
+
+            <!-- Main Window -->
+            <ActivityIndicator x:Name="BusyIndicator" HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand" IsVisible="False" IsRunning="True" Color="Black" />
+            <ScrollView x:Name="ImgScroller" VerticalOptions="Fill" IsVisible="True" >
+                <Image x:Name="imgViewer"
+                   HorizontalOptions="CenterAndExpand"
+                   VerticalOptions="FillAndExpand"
+                   BackgroundColor="LightGray" />
+            </ScrollView>
+
+            <ScrollView x:Name="txtScroller" VerticalOptions="Fill" IsVisible="False" >
+                <Label x:Name="lblReaderText"
+                       HorizontalOptions="CenterAndExpand"
+                       VerticalOptions="FillAndExpand" FontSize="Medium" />
+            </ScrollView>
+
+            <!-- Menu -->
+            <ScrollView Orientation="Horizontal" HorizontalOptions="CenterAndExpand" >
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Spacing="5">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand">
+                        <Button x:Name="btnGallery"
+                                Text="🖼️"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                Clicked="BtnGallery_Clicked"/>
+                        <Button x:Name="btnCamera"
+                                Text="📷"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                Clicked="BtnCamera_Clicked"/>
+                    </StackLayout>
+                    <Label Text=" | " HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                    <Label Text="Fill" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Switch Toggled="Fill_Toggled" HorizontalOptions="Center"/>
+                    <Label Text=" | " HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                    <Button x:Name="btnReload"
+                                Text="🔄"
+                                HorizontalOptions="End"
+                                VerticalOptions="Center"
+                                Clicked="BtnReload_Clicked"/>
+                    <Picker x:Name="ColorPicker" Title="Color" SelectedIndexChanged="Picker_SelectedIndexChanged" />
+                    <Stepper x:Name="FontSize" Maximum="128" Minimum="8" Value="64" ValueChanged="FontSize_ValueChanged" Increment="2" />
+                    <Label x:Name="FontSizeLabel" Text="64" HorizontalOptions="Start" VerticalTextAlignment="Center" />
+                    <Label Text=" | " HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                    <Label Text="Google" HorizontalOptions="Center" VerticalTextAlignment="Center"/>
+                    <Switch Toggled="Switch_Toggled" HorizontalOptions="Center"/>
+                    <Label Text=" | " HorizontalOptions="Start" VerticalTextAlignment="Center"/>
+                    <Label Text="Text Only" HorizontalOptions="Start"  VerticalTextAlignment="Center" />
+                    <Switch x:Name="txtMode" Toggled="TxtMode_Toggled" HorizontalOptions="End"/>
+                </StackLayout>
+            </ScrollView>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
